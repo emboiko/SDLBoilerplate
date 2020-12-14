@@ -11,7 +11,7 @@ struct Rect {
 	float y;
 	float width;
 	float height;
-} rect;
+} rect_obj;
 
 
 int last_frame_time = 0;
@@ -53,10 +53,10 @@ int init_window(void) {
 
 
 void setup(void) {
-	rect.x = 20;
-	rect.y = 20;
-	rect.width = 15;
-	rect.height = 15;
+	rect_obj.x = 20;
+	rect_obj.y = 20;
+	rect_obj.width = 15;
+	rect_obj.height = 15;
 }
 
 
@@ -103,8 +103,8 @@ void update() {
 	// Game objects updated below
 	////////////////////////////////////////////////////////////////////////
 
-	rect.x += 50 * delta_time;
-	rect.y += 80 * delta_time;
+	rect_obj.x += 50 * delta_time;
+	rect_obj.y += 80 * delta_time;
 }
 
 
@@ -113,10 +113,10 @@ void draw() {
 	SDL_RenderClear(renderer);
 
 	SDL_Rect square = {
-		(int)rect.x,
-		(int)rect.y,
-		(int)rect.width,
-		(int)rect.height
+		(int)rect_obj.x,
+		(int)rect_obj.y,
+		(int)rect_obj.width,
+		(int)rect_obj.height
 	};
 
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
